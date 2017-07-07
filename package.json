@@ -1,0 +1,31 @@
+{
+  "name": "lab-news",
+  "version": "1.0.0",
+  "description": "Laboratoria news.",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "author": "Misshel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "firebase": "^4.1.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Misshel/S51-LabNews-PF-.git"
+  },
+  "keywords": [
+    "news",
+    "Laboratoria",
+    "proyecto",
+    "final"
+  ],
+  "bugs": {
+    "url": "https://github.com/Misshel/S51-LabNews-PF-/issues"
+  },
+  "homepage": "https://github.com/Misshel/S51-LabNews-PF-#readme"
+}
