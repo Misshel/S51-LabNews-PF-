@@ -7,38 +7,36 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const nodemon = require('gulp-nodemon');
 
-
 var config = {
   source: './src/',
   dist: './public'
 };
 
-
 var paths = {
   assets: "/assets/",
   img: "assets/img/*",
+  font: "assets/fonts/roboto/*",
   js: "assets/js/*",
   html: "**/*.html",
-  sass: "scss/**/*.scss",
   materializeJs: "assets/js/materialize.min.js",
   mainSass: "scss/style.scss",
-  materializeSass: "scss/sass/materialize.scss",
+  materializeCss: "scss/materialize.min.css",
   componentsFolder: "./src/assets/js/components/"
 };
-
 
 var sources = {
   assets: config.source + paths.assets,
   img: config.source + paths.img,
+  font: config.source + paths.font,
   rootComponents: config.source + paths.assets + paths.components,
   materializeJs: config.source + paths.materializeJs,
   js: config.source + paths.js,
-  rootMaterialize: config.source + paths.assets + paths.materializeSass,
-  sass: paths.assets + paths.sass,
+  rootMaterialize: config.source + paths.assets + paths.materializeCss,
   html: config.source + paths.html,
   rootSass: config.source + paths.assets + paths.mainSass,
   icons: config.source + paths.assets + paths.icons
 };
+
 
 
 //minifica y concatena todos los componentes del proyecto
@@ -58,12 +56,17 @@ gulp.task('img', ()=>{
   gulp.src(sources.img).pipe(gulp.dest(config.dist + paths.assets + "img"));
 });
 
+gulp.task('font', ()=>{
+  gulp.src(sources.font).pipe(gulp.dest(config.dist + paths.assets + "font"));
+});
+
 gulp.task('sass', ()=>{
-  gulp.src(sources.rootSass)
-  .pipe(sass({
+  gulp.src(sources.rootSass).pipe(sass({
     outputStyle: "compressed"
   }).on("Error", sass.logError))
   .pipe(gulp.dest(config.dist + paths.assets + "css"));
+    gulp.src(sources.rootMaterialize).pipe(gulp.dest(config.dist + paths.assets + "css"));
+
 });
 
 //actualizan los cambios segun cada archivo

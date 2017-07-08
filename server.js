@@ -9,6 +9,7 @@ app.get('/api/news/', function (req, res) {
         console.log('Obteniendo noticias\nCantidad de Resultado:' +result.length);
         res.status(200).json(result);
     });
+    console.log(news);
 });
 
 app.get('/api/news/:news_id', function (req, res) {
@@ -26,9 +27,10 @@ app.get('/api/categories/', function (req, res) {
     categories.then( (result) => {
         console.log('Obteniendo categorias\nCantidad de Resultados:' +result.length);
         res.status(200).json(result);
-    });
-});
 
+    });
+
+});
 app.get('/api/categories/:category_id', function (req, res) {
     let categories = api.categories(req.params.category_id);
 

@@ -15,8 +15,11 @@ const state = {
 
 
 $(_=>{
+
+  // $.post(news(),(news)=>{
+  //   state.news = news;
+  //   console.log(state.news);
+  // });
   const root = $('#root');
   render(root);
-  // readyCarousel();
-
 });
