@@ -21,6 +21,7 @@ var paths = {
   materializeJs: "assets/js/materialize.min.js",
   mainSass: "scss/style.scss",
   materializeCss: "scss/materialize.min.css",
+  iconCss: "scss/icon.css",
   componentsFolder: "./src/assets/js/components/"
 };
 
@@ -34,15 +35,15 @@ var sources = {
   rootMaterialize: config.source + paths.assets + paths.materializeCss,
   html: config.source + paths.html,
   rootSass: config.source + paths.assets + paths.mainSass,
-  icons: config.source + paths.assets + paths.icons
+  rootIcon: config.source + paths.assets + paths.iconCss,
 };
 
 
 
 //minifica y concatena todos los componentes del proyecto
 gulp.task('js', () => {
-  gulp.src([sources.materializeJs, paths.componentsFolder+'navbar.js',paths.componentsFolder+'header.js',
-  paths.componentsFolder+'news-board.js', paths.componentsFolder+'new.js', sources.js+'app.js' ])
+  gulp.src([sources.materializeJs, paths.componentsFolder+'header.js', paths.componentsFolder+'navbar.js',
+  paths.componentsFolder+'news-board.js', paths.componentsFolder+'new.js',  paths.componentsFolder+'footer.js', sources.js+'app.js' ])
   .pipe(concat("app.js"))
   .pipe(gulp.dest(config.dist + paths.assets + "js"));
 });
@@ -66,6 +67,7 @@ gulp.task('sass', ()=>{
   }).on("Error", sass.logError))
   .pipe(gulp.dest(config.dist + paths.assets + "css"));
     gulp.src(sources.rootMaterialize).pipe(gulp.dest(config.dist + paths.assets + "css"));
+    gulp.src(sources.rootIcon).pipe(gulp.dest(config.dist + paths.assets + "css"));
 
 });
 
