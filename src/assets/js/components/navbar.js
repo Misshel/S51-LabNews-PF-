@@ -3,7 +3,7 @@ const navbar = () =>{
 
   const nav = $('<nav class="white" role="navigation"></nav>');
   const navCont = $('<div class="nav-wrapper container"></div>');
-  const navLogo = $('<div class="col s12"><div class="col s4"><img src="assets/img/logoicon.png" alt="logo laboratoria"></div></div>')
+  const navLogo = $('<div class="col s12"><div class="col s4"><img class="img-responsive" src="assets/img/logoicon.png" alt="logo laboratoria"></div></div>')
   const lista = $('<ul class=""></ul>');
   const listamovil = $('<ul class=""></ul>');
 

@@ -1,4 +1,21 @@
 body{
-  // background: #000000;
-  // color: #gggggg;
+  font-family: Montserrat;
+  box-sizing: border-box;
+}
+
+$Laboratoria : #F7B617;
+$LaboratoriaDarck : #2B2B2B;
+$textLigth: #ffffff;
+
+header{
+  background-color: $textLigth;
+  text-align: center;
+}
+nav{
+  @extend header;
+}
+
+footer{
+  background-color: $Laboratoria;
+  color: $textLigth;
 }

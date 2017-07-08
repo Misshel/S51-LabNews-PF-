@@ -17,7 +17,7 @@ const newsPort = () => {
 
 const newCol3 = (img,noticia) => {
   const col = $('<div class="col s12 l3"></div>');
-  const img = $('<div class="col s12"><img src="assets/img/'img'.png" alt="'img'"></div>');
+  const img = $('<div class="col s12"><img class="img-responsive" src="assets/img/'img'.png" alt="'img'"></div>');
   const text = $('<div class="col s12"><p>'noticia'</p></div>')
   today(hoy);
   col.append(img);
@@ -25,7 +25,7 @@ const newCol3 = (img,noticia) => {
 }
 const newCol6 = (img,noticia,hoy) => {
   const col = $('<div class="col s12 l6"></div>');
-  const img = $('<div class="col s12"><img src="assets/img/' + img +'.png" alt="'+ img +'"></div>');
+  const img = $('<div class="col s12"><img class="img-responsive" src="assets/img/' + img +'.png" alt="'+ img +'"></div>');
   const text = $('<div class="col s12"><p>'noticia'</p></div>')
   today(hoy);
   col.append(img);
